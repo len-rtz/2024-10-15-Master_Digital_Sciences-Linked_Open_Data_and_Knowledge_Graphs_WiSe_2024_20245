@@ -24,7 +24,7 @@ Here we can introduce **more content**.
 
 # A slide with an image
 
-![A network of people](images/Example_presenation_black_orange_men_cloud.png){ width=60% height=60% }
+![A network of people](images/Example_presentation_black_orange_men_cloud.png){ width=60% height=60% }
 
 ---
 
