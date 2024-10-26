@@ -1,5 +1,7 @@
 # Basic presentation 
 
+Requirement: You need to have [pandoc](https://pandoc.org/) installed.
+
 ```
 pandoc Example_presentation.md -t beamer -V aspectratio=169 -V theme:metropolis -o Example_presentation.pdf
 ```
