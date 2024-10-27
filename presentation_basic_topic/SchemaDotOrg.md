@@ -134,15 +134,11 @@
 
 # 4 Real-world examples
 
-## 4.1 Schema.org in emails
-
 ![Schema.org usage in an email confirmation of a reservation](images/email_reservation.png){width=80% height=80%}
 
 ---
 
 # 4 Real-world examples
-
-## 4.2 Schema.org in rich snippets
 
 [![Schema.org usage in rich snippets](images/rich_snippets.png)](https://search.google.com/test/rich-results/result?id=UtfvXcS6-Xqn7jYN4FG8JQ)
 
