@@ -6,18 +6,15 @@
 
 1. Motivation and history
 2. Basic information
-3. Items and (data) types
-4. Properties
-5. The structure of the *s:Thing*-hierarchy
-6. Example of a type and its properties
-7. A real-world example
-8. Another real-world example
-9. Limitations and criticism of Schema.org
-10. Sources
+3. Structure of Schema.org
+4. Real-world examples
+5. Limitations and criticism of Schema.org
+6. Conclusion
+7. Sources
 
 ---
 
-# Motivation and history
+# 1 Motivation and history
 
 * End of 2010s: **Augmentation of search** with structured data
 
@@ -33,7 +30,7 @@
 
 ---
 
-# Basic information and usage
+# 2 Basic information and usage
 
 * Schema.org is a **vocabulary**, not an ontology
 
@@ -53,7 +50,9 @@
 
 ---
 
-# Items and (data) types
+# 3 Structure of Schema.org
+
+## 3.1 Items and (data) types
 
 * **Items** are things in the **real world**, we wish to describe
 
@@ -69,27 +68,43 @@
 
 ---
 
-# Structure of the *s:Thing*-hierarchy
+# 3 Structure of Schema.org
 
-## Not a tree structure!
+## 3.2 Structure of the *s:Thing*-hierarchy
 
-![Hierarchy of s:VideoGame](images/hierarchy_videogame.png){ width=60% height=70% }
+**Not a tree structure!**
 
----
-
-# Structure of the *s:Thing*-hierarchy (cont.)
-
-![Hierarchy of s:VideoGameSeries](images/hierarchy_videogameseries.png){ width=55% height=75% }
+![Hierarchy of s:VideoGame](images/hierarchy_videogame.png){ width=40% height=55% }
 
 ---
 
-# Properties
+# 3 Structure of Schema.org
+
+## 3.2 Structure of the *s:Thing*-hierarchy (cont.)
+
+![Hierarchy of s:VideoGameSeries](images/hierarchy_videogameseries.png){ width=40% height=75% }
+
+---
+
+# 3 Structure of Schema.org
+
+## 3.3 Properties
+
+* Container for the attributes of an item
 
 * Link two types:
   1. Type and data type
   2. Type and another type
 
 * Have domain and range definitions
+
+* 1484 properties
+
+---
+
+# 3 Structure of Schema.org
+
+## 3.4 Domain and range of properties
 
 * **Domain**: Types the property can be used on
 
@@ -99,11 +114,11 @@
 
 * Domain and range are **disjunctive**
 
-* 1484 properties
-
 ---
 
-# Example of the properties of a type
+# 3 Structure of Schema.org
+
+## 3.5 Example of the properties of a type
 
 * s:\textcolor{red}{FoodEstablishmentReservation}
 
@@ -117,13 +132,17 @@
 
 ---
 
-# A real-world example (email)
+# 4 Real-world examples
+
+## 4.1 Schema.org in emails
 
 ![Schema.org usage in an email confirmation of a reservation](images/email_reservation.png){width=80% height=80%}
 
 ---
 
-# Another real-world example (rich snippets)
+# 4 Real-world examples
+
+## 4.2 Schema.org in rich snippets
 
 [![Schema.org usage in rich snippets](images/rich_snippets.png)](https://search.google.com/test/rich-results/result?id=UtfvXcS6-Xqn7jYN4FG8JQ)
 
@@ -131,7 +150,7 @@ Test for yourself: \textcolor{blue}{https://search.google.com/test/rich-results}
 
 ---
 
-# Limitation and criticism
+# 5 Limitations and criticism
 
 * **Explicit** design for **webpage content**
 
@@ -145,7 +164,7 @@ Test for yourself: \textcolor{blue}{https://search.google.com/test/rich-results}
 
 ---
 
-# Conclusion
+# 6 Conclusion
 
 Thank you for attending my presentation!
 
@@ -153,7 +172,7 @@ Do you think that Schema.org still has **unused potential**? Or are the extensio
 
 ---
 
-# Sources I
+# 7 Sources I
 
 * R. V. Guha, D. Brickley, und S. Macbeth, "Schema.org: evolution of structured data on the web", Commun. ACM, Bd. 59, Nr. 2, S. 44–51, Jan. 2016, doi: 10.1145/2844544.
 * A. Brinkmann, A. Primpeli, und C. Bizer, "The Web Data Commons Schema.org Data Set Series", in *Companion Proceedings of the ACM Web Conference 2023*, Austin TX USA: ACM, Apr. 2023, S. 136–139. doi: 10.1145/3543873.3587331.
@@ -162,7 +181,7 @@ Do you think that Schema.org still has **unused potential**? Or are the extensio
 
 ---
 
-# Sources II
+# 7 Sources II
 
 * U. Serles und D. Fensel, "Analysis of Schema.org at Five Levels of KR", in *An Introduction to Knowledge Graphs*, Cham: Springer Nature Switzerland, 2024, S. 259–270. doi: 10.1007/978-3-031-45256-7_15.
 * P. Hitzler, "A review of the semantic web field", *Commun. ACM*, Bd. 64, Nr. 2, S. 76–83, Jan. 2021, doi: 10.1145/3397512.
