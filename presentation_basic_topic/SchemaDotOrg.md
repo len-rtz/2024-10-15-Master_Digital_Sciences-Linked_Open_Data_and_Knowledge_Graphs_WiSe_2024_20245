@@ -122,13 +122,13 @@
 
 * s:\textcolor{red}{FoodEstablishmentReservation}
 
-* s:\textcolor{green}{Thing} > s:Intangible > s:\textcolor{blue}{Reservation} > s:\textcolor{red}{FoodEstablishmentReservation}
+* s:\textcolor{teal}{Thing} > s:Intangible > s:\textcolor{blue}{Reservation} > s:\textcolor{red}{FoodEstablishmentReservation}
 
 * Properties:
   * s:startTime | range: *s:Time* or *s:DateTime* | from s:\textcolor{red}{FoodEstablishmentReservation}
   * s:underName | range: s:Person or s:Organization | from s:\textcolor{blue}{Reservation}
-  * s:name | range: *s:Text* | from s:\textcolor{green}{Thing}
-  * ...many more... (in total 27 = \textcolor{green}{12} + \textcolor{blue}{12} + \textcolor{red}{3})
+  * s:name | range: *s:Text* | from s:\textcolor{teal}{Thing}
+  * ...many more... (in total 27 = \textcolor{teal}{12} + \textcolor{blue}{12} + \textcolor{red}{3})
 
 ---
 
