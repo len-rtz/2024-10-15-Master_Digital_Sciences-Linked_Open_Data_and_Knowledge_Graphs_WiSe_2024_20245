@@ -140,7 +140,7 @@
 
 # 4 Real-world examples
 
-[![Schema.org usage in rich snippets](images/rich_snippets.png)](https://search.google.com/test/rich-results/result?id=UtfvXcS6-Xqn7jYN4FG8JQ)
+![Schema.org usage in rich snippets](images/rich_snippets.png){width=95% height=80%}
 
 Test for yourself: \textcolor{blue}{https://search.google.com/test/rich-results}
 
