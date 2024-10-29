@@ -48,9 +48,10 @@
 
 **Example Query**:
 
-    sparql
-    SELECT ?s ?p ?o ?certainty WHERE {
-      << ?s ?p ?o >> :year ?year .
+    sparql-star
+
+    SELECT ?s ?p ?o ?year WHERE {
+      << ?s ?p ?o >> :year ?2004 .
     }
     
 # Advantages of RDF*
