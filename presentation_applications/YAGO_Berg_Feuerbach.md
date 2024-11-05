@@ -96,11 +96,11 @@
 
 - Improvement in 2012
 
-- "anchoring [...] along both the spatial and the temporal dimensions"
+- "anchoring [...] along both the spatial and the temporal dimensions" (Hoffart et al. 2012, p. 3)
 
 - *When and where was a fact true?*
 
-- Introduction of *SPOTL(X)* for representing and querying "spatio-temporally enhanced facts"
+- Introduction of *SPOTL(X)* for representing and querying "spatio-temporally enhanced facts" (Hoffart et al. 2012, p. 3)
 
 - Time (or time frame) for entities and facts
 
