@@ -97,9 +97,11 @@ It offers a user-friendly environment for building collaborative knowledge bases
 
 ## Wikibase Documentation and Creating a Wikibase
 
+<url> https://www.wikibase.cloud/ </url>
+
 Within Wikibase.cloud website you can register for creating Wikibases and find the documentation about data modelling, creating and deleting data, importing data, and many other things.
 
-![image.png](attachment:45306efc-1628-483a-bce5-44ef3417c3a2.png)
+![](wikibase_documentation.png)
 
 <br>
 <br>
@@ -113,15 +115,14 @@ Within Wikibase.cloud website you can register for creating Wikibases and find t
 <br>
 <br>
 
-![image.png](attachment:4bc2357b-04a7-41e0-ba8d-daab70b1e2e1.png)
+![](wikibase_creating_wikibases.png)
 
 <br>
 <br>
 <br>
 
 ## **Choosing the name and the domain** 
-![image.png](attachment:f995488d-d675-4c10-8265-2496cd67fbc6.png)
-
+![](wikibase_domain.png)
 
 <br>
 <br>
@@ -129,7 +130,9 @@ Within Wikibase.cloud website you can register for creating Wikibases and find t
 
 ## **Wikibase settings**
 
-![image.png](attachment:e0c1ce14-f425-42b8-aa6b-d81f9e94746d.png)
+![](wikibase_settings.png)
 
 ## Wikibase homepage
-![image.png](attachment:c55c171b-bec9-4f8f-8772-e9cdbf03df2c.png)
+<url> https://finance-eu.wikibase.cloud/wiki/Main_Page </url>
+
+![](wikibase_homepage.png)
