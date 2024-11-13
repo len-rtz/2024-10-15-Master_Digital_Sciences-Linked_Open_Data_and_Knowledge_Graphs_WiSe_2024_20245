@@ -115,7 +115,9 @@
 
 ---
 
-# 5 Method of evaluation
+# 5 Evaluation
+
+## 5.1 Methods
 
 * Automatic evaluation against GHKG
 
@@ -133,12 +135,29 @@
 
 ---
 
-# 6 Results
+# 5 Evaluation
 
-* Results
+## 5.2 Results
+
+* Naive Bayes and noisy OR perform considerably better than logistic regression
+
+* Performance better when models compared to evaluations by physicians
+
+* With recall of 0.5: Precison of noisy OR at 0.87, of naive Bayes at 0.8
+
+* Conclusion: Noisy OR better than naive Bayes; statsitically significant (p = 0.01)
 
 ---
-# 6 Conclusion
+
+# 6 Discussion
+
+---
+
+# 7 Future improvements
+
+---
+
+# 8 Conclusion
 
 Thank you for attending my presentation!
 
@@ -146,13 +165,13 @@ Do you think that Schema.org still has **unused potential**? Or are the extensio
 
 ---
 
-# 7 Sources I
+# 9 Sources I
 
 * [1] M. Rotmensch, Y. Halpern, A. Tlimat, S. Horng, und D. Sontag, „Learning a Health Knowledge Graph from Electronic Medical Records“, Sci Rep, Bd. 7, Nr. 1, S. 5994, Juli 2017, doi: 10.1038/s41598-017-05778-z.
 
 ---
 
-# 7 Sources II
+# 9 Sources II
 
 * U. Serles und D. Fensel, "Analysis of Schema.org at Five Levels of KR", in *An Introduction to Knowledge Graphs*, Cham: Springer Nature Switzerland, 2024, S. 259–270. doi: 10.1007/978-3-031-45256-7_15.
 * P. Hitzler, "A review of the semantic web field", *Commun. ACM*, Bd. 64, Nr. 2, S. 76–83, Jan. 2021, doi: 10.1145/3397512.
