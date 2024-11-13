@@ -34,13 +34,13 @@
 
 * Utilize electronic medical record (EMR) to construct a knowledge graph
 
-* Validation against Google health knowledge graph
+* Validation against Google health knowledge graph (GHKG)
 
 * Three steps for knowledge graph generation:
 
   1. Data collection and preparation
 
-  2. Learning of statistical modela
+  2. Learning of statistical models
 
   3. Transformation of models into knowledge graphs
 
@@ -52,7 +52,7 @@
 
 * Some authors distinguish between these terms: EHR is comprehensive collection of EMRs
 
-* EMR is information on a patient from one --TODO--
+* EMR is information on a patient from one **TODO**
 
 * EMRs useful as data source because they represent diseases and their symptoms in real-world environment
 
@@ -64,6 +64,80 @@
 
 ---
 
+# 4 Implementation
+
+## 4.1 Data collection and preparation
+
+* Focus on positive mentions of diseases and their symptoms
+
+* Structured data:
+  * ICD-9 codes
+
+* Unstructured data:
+  * Triage Assessment
+  * Nursing Notes
+  * MD comments
+
+* Diseases and symptoms chosen from GHKG
+
+* Mapping of extracted concepts to a concept ID
+
+---
+
+# 4 Implementation
+
+## 4.2 Learning of statistical models
+
+* Three statistical models:
+  * Naive Bayes
+  * Logistic regression
+  * Noisy OR gates
+
+* Parameter learning with maximum likelihood estimation
+
+* L1 regularization used logisic regression
+
+* Laplacian smoothing used for naive Bayes
+
+---
+
+# 4 Implementation
+
+## 4.3 Transformation of models into knowledge graphs
+
+* Estimating the importance of edges (connections between diseases and symptoms)
+
+* One importance measure for each statistical models
+
+* Maximum of five symptoms per disease
+
+* ![Resulting knowledge graph (own illustration according to [1, p. 4])](images/KG.png){ width=40% height=55% }
+
+---
+
+# 5 Method of evaluation
+
+* Automatic evaluation against GHKG
+
+* Assumption: GHKG is precise, but not complete
+
+* -> relative comparison between models, not an absolute evaluation
+
+* Two best performing models and GHKG evaluated by physicians
+
+* Physicians tag suggested disease-symptom edges on a 4-point scale ranging from "Always happens" to "Never"
+
+* Binarization with "Never" as negative and other three as positive
+
+* Precision-recall curve as evaluation measure
+
+---
+
+# 6 Results
+
+* Results
+
+---
 # 6 Conclusion
 
 Thank you for attending my presentation!
@@ -75,7 +149,6 @@ Do you think that Schema.org still has **unused potential**? Or are the extensio
 # 7 Sources I
 
 * [1] M. Rotmensch, Y. Halpern, A. Tlimat, S. Horng, und D. Sontag, „Learning a Health Knowledge Graph from Electronic Medical Records“, Sci Rep, Bd. 7, Nr. 1, S. 5994, Juli 2017, doi: 10.1038/s41598-017-05778-z.
-
 
 ---
 
