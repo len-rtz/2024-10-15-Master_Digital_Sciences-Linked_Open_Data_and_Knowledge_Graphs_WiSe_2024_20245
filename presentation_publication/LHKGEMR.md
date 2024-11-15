@@ -95,7 +95,7 @@
 
 * Parameter learning with maximum likelihood estimation
 
-* L1 regularization used logisic regression
+* L1 regularization used for logistic regression
 
 * Laplacian smoothing used for naive Bayes
 
@@ -107,11 +107,11 @@
 
 * Estimating the importance of edges (connections between diseases and symptoms)
 
-* One importance measure for each statistical models
+* One importance measure for each statistical model
 
 * Maximum of five symptoms per disease
 
-* ![Resulting knowledge graph (own illustration according to [1, p. 4])](images/KG.png){ width=40% height=55% }
+![Resulting knowledge graph (own illustration according to [1, p. 4])](images/KG.png){ width=90% height=40% }
 
 ---
 
@@ -151,9 +151,32 @@
 
 # 6 Discussion
 
+* Three kind of differences between edges suggested by the model and by GHKG:
+  * GHKG focuses on information for web users
+  * GHKG uses less precise language
+  * Less severe edges in GHKG
+
+* Naive Bayes and logistic regression suggest symptoms casued by confounding factors
+
+* Noisy OR often suggests general symptoms
+
+* Difficulty inferring causation from correlation
+
+* Confounding factors difficult to recognize and eliminate
+
 ---
 
 # 7 Future improvements
+
+* Edges between symptoms
+
+* Softer boundary between symptom and disease
+
+* Introduce a manual filter step
+
+* Use other, non-parametric models
+
+* Higher coverage, more input data
 
 ---
 
