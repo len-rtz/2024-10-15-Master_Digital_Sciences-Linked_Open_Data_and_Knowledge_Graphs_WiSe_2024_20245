@@ -6,11 +6,13 @@
 
 1. Motivation and earlier work
 2. Goal and methods
-3. Structure of Schema.org
-4. Real-world examples
-5. Limitations and criticism of Schema.org
-6. Conclusion
-7. Sources
+3. Electronic medical record
+4. Implementation
+5. Evaluation
+6. Discussion
+7. Future improvements
+8. Conclusion
+9. Sources
 
 ---
 
@@ -46,21 +48,33 @@
 
 ---
 
-# 3 Electronic Medical Record (EMR)
+# 3 Electronic medical record (EMR)
 
 * EMR sometimes used interchangeably with electronic health record (EHR)
 
-* Some authors distinguish between these terms: EHR is comprehensive collection of EMRs
+* Some authors distinguish between these terms
 
-* EMR is information on a patient from one **TODO**
+* EHR is patient-centric collection of EMRs [3, p. 4]
 
-* EMRs useful as data source because they represent diseases and their symptoms in real-world environment
+* EMR originally tool to store data *"of one or more pathological episodes concerning a patient"* [2, p. 121]
+
+* Newer interpretation: EMR is information on a patient from one healthcare provider [3, p. 4]
+
+---
+
+# 3 Electronic medical record (EMR) (cont.)
+
+* EMRs useful as data source because they represent diseases and their symptoms in a real-world environment
 
 * Difficult data source for four reasons:
-  1. Notes from physicians and notes less formal
+
+  1. Notes from physicians and nurses less formal
+
   2. Comorbidities, confounding factors and nuances present
+
   3. Associations between diseases and symptoms are statistical
-  4. Pre-filtered by physician
+
+  4. Pre-filtered by physicians
 
 ---
 
@@ -74,11 +88,12 @@
   * ICD-9 codes
 
 * Unstructured data:
+  * Chief complaint
   * Triage Assessment
   * Nursing Notes
   * MD comments
 
-* Diseases and symptoms chosen from GHKG
+* Diseases (min. 100 mentions in data) and symptoms (min. 10) chosen from GHKG
 
 * Mapping of extracted concepts to a concept ID
 
@@ -123,7 +138,7 @@
 
 * Assumption: GHKG is precise, but not complete
 
-* -> relative comparison between models, not an absolute evaluation
+* Relative comparison between models, not an absolute evaluation
 
 * Two best performing models and GHKG evaluated by physicians
 
@@ -143,9 +158,9 @@
 
 * Performance better when models compared to evaluations by physicians
 
-* With recall of 0.5: Precison of noisy OR at 0.87, of naive Bayes at 0.8
+* With recall of 0.5: Precision of noisy OR at 0.87, of naive Bayes at 0.8
 
-* Conclusion: Noisy OR better than naive Bayes; statsitically significant (p = 0.01)
+* Conclusion: Noisy OR better than naive Bayes; statistically significant (p = 0.01)
 
 ---
 
@@ -170,7 +185,7 @@
 
 * Edges between symptoms
 
-* Softer boundary between symptom and disease
+* Softer boundary between symptoms and diseases
 
 * Introduce a manual filter step
 
@@ -182,19 +197,13 @@
 
 # 8 Conclusion
 
-Thank you for attending my presentation!
-
-Do you think that Schema.org still has **unused potential**? Or are the extensions all we can expect?
+Thank you for attending my presentation!\
+Was a knowledge graph really necessary? Is this even a knowledge graph?
 
 ---
 
-# 9 Sources I
+# 9 Sources
 
 * [1] M. Rotmensch, Y. Halpern, A. Tlimat, S. Horng, und D. Sontag, „Learning a Health Knowledge Graph from Electronic Medical Records“, Sci Rep, Bd. 7, Nr. 1, S. 5994, Juli 2017, doi: 10.1038/s41598-017-05778-z.
-
----
-
-# 9 Sources II
-
-* U. Serles und D. Fensel, "Analysis of Schema.org at Five Levels of KR", in *An Introduction to Knowledge Graphs*, Cham: Springer Nature Switzerland, 2024, S. 259–270. doi: 10.1007/978-3-031-45256-7_15.
-* P. Hitzler, "A review of the semantic web field", *Commun. ACM*, Bd. 64, Nr. 2, S. 76–83, Jan. 2021, doi: 10.1145/3397512.
+* [2] M. Fieschi, „Managing and Integrating Clinical Data: Health Records“, in Health Data Processing, Elsevier, 2018, S. 121–136. doi: 10.1016/B978-1-78548-287-8.50009-2.
+* [3] S. Shafqat, S. Kishwer, R. U. Rasool, J. Qadir, T. Amjad, und H. F. Ahmad, „Big data analytics enhanced healthcare systems: a review“, J Supercomput, Bd. 76, Nr. 3, S. 1754–1799, März 2020, doi: 10.1007/s11227-017-2222-4.
