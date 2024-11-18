@@ -1,4 +1,4 @@
-% Learning a Health Knowledge Graph from Electronic Medical Records
+% Presentation on: Learning a Health Knowledge Graph from Electronic Medical Records *by* Rotmensch et al.
 % Ole Berg
 % November 19, 2024
 
@@ -16,11 +16,29 @@
 
 ---
 
-# 1 Motivation and earlier work
+# 1 Metadata
+
+* Authors: Maya Rotmensch, Yoni Halpern, Abdulhakim Tlimat, Steven Horng, David Sontag
+
+* Joint effort of institutions at medical centers and universities
+
+* Contains comprehensive appendix
+
+* Published on July 20, 2017 in *Scientific Reports*
+
+* *Scientific Reports* is multi-disciplinary open access journal [1]
+
+* 5th-most cited journal in the world [1]
+
+* 248 citations on CrossRef (96th percentile)
+
+---
+
+# 2 Motivation and earlier work
 
 * Demand for decision support systems in clinical settings
 
-* Existing knowledge bases created manually or *"using simple pairwise statistics"* [1, p. 1]
+* Existing knowledge bases created manually or *"using simple pairwise statistics"* [2, p. 1]
 
 * E. g. 15 person-years needed for *Internist-1/QMR* knowledge base
 
@@ -32,11 +50,11 @@
 
 ---
 
-# 2 Goal and methods
+# 3 Goal and methods
 
 * Utilize electronic medical record (EMR) to construct a knowledge graph
 
-* Validation against Google health knowledge graph (GHKG)
+* Validation against *Google* health knowledge graph (GHKG)
 
 * Three steps for knowledge graph generation:
 
@@ -48,21 +66,21 @@
 
 ---
 
-# 3 Electronic medical record (EMR)
+# 4 Electronic medical record (EMR)
 
 * EMR sometimes used interchangeably with electronic health record (EHR)
 
 * Some authors distinguish between these terms
 
-* EHR is patient-centric collection of EMRs [3, p. 4]
+* EHR is patient-centric collection of EMRs [4, p. 4]
 
-* EMR originally tool to store data *"of one or more pathological episodes concerning a patient"* [2, p. 121]
+* EMR originally tool to store data *"of one or more pathological episodes concerning a patient"* [3, p. 121]
 
-* Newer interpretation: EMR is information on a patient from one healthcare provider [3, p. 4]
+* Newer interpretation: EMR is information on a patient from one healthcare provider [4, p. 4]
 
 ---
 
-# 3 Electronic medical record (EMR) (cont.)
+# 4 Electronic medical record (EMR) (cont.)
 
 * EMRs useful as data source because they represent diseases and their symptoms in a real-world environment
 
@@ -78,9 +96,9 @@
 
 ---
 
-# 4 Implementation
+# 5 Implementation
 
-## 4.1 Data collection and preparation
+## 5.1 Data collection and preparation
 
 * Focus on positive mentions of diseases and their symptoms
 
@@ -99,9 +117,9 @@
 
 ---
 
-# 4 Implementation
+# 5 Implementation
 
-## 4.2 Learning of statistical models
+## 5.2 Learning of statistical models
 
 * Three statistical models:
   * Naive Bayes
@@ -116,9 +134,9 @@
 
 ---
 
-# 4 Implementation
+# 5 Implementation
 
-## 4.3 Transformation of models into knowledge graphs
+## 5.3 Transformation of models into knowledge graphs
 
 * Estimating the importance of edges (connections between diseases and symptoms)
 
@@ -130,9 +148,9 @@
 
 ---
 
-# 5 Evaluation
+# 6 Evaluation
 
-## 5.1 Methods
+## 6.1 Methods
 
 * Automatic evaluation against GHKG
 
@@ -150,9 +168,9 @@
 
 ---
 
-# 5 Evaluation
+# 6 Evaluation
 
-## 5.2 Results
+## 6.2 Results
 
 * Naive Bayes and noisy OR perform considerably better than logistic regression
 
@@ -164,7 +182,7 @@
 
 ---
 
-# 6 Discussion
+# 7 Discussion
 
 * Three kind of differences between edges suggested by the model and by GHKG:
   * GHKG focuses on information for web users
@@ -181,7 +199,7 @@
 
 ---
 
-# 7 Future improvements
+# 8 Future improvements
 
 * Edges between symptoms
 
@@ -195,7 +213,7 @@
 
 ---
 
-# 8 Conclusion
+# 9 Conclusion
 
 Thank you for attending my presentation!\
 Was a knowledge graph really necessary? Is this even a knowledge graph?
@@ -204,6 +222,7 @@ Was a knowledge graph really necessary? Is this even a knowledge graph?
 
 # 9 Sources
 
-* [1] M. Rotmensch, Y. Halpern, A. Tlimat, S. Horng, und D. Sontag, „Learning a Health Knowledge Graph from Electronic Medical Records“, Sci Rep, Bd. 7, Nr. 1, S. 5994, Juli 2017, doi: 10.1038/s41598-017-05778-z.
-* [2] M. Fieschi, „Managing and Integrating Clinical Data: Health Records“, in Health Data Processing, Elsevier, 2018, S. 121–136. doi: 10.1016/B978-1-78548-287-8.50009-2.
-* [3] S. Shafqat, S. Kishwer, R. U. Rasool, J. Qadir, T. Amjad, und H. F. Ahmad, „Big data analytics enhanced healthcare systems: a review“, J Supercomput, Bd. 76, Nr. 3, S. 1754–1799, März 2020, doi: 10.1007/s11227-017-2222-4.
+* [1] Scientific Reports, „About Scientific Reports | Scientific Reports“. Zugegriffen: 18. November 2024. [Online]. Verfügbar unter: https://www.nature.com/srep/about
+* [2] M. Rotmensch, Y. Halpern, A. Tlimat, S. Horng, und D. Sontag, „Learning a Health Knowledge Graph from Electronic Medical Records“, Sci Rep, Bd. 7, Nr. 1, S. 5994, Juli 2017, doi: 10.1038/s41598-017-05778-z.
+* [3] M. Fieschi, „Managing and Integrating Clinical Data: Health Records“, in Health Data Processing, Elsevier, 2018, S. 121–136. doi: 10.1016/B978-1-78548-287-8.50009-2.
+* [4] S. Shafqat, S. Kishwer, R. U. Rasool, J. Qadir, T. Amjad, und H. F. Ahmad, „Big data analytics enhanced healthcare systems: a review“, J Supercomput, Bd. 76, Nr. 3, S. 1754–1799, März 2020, doi: 10.1007/s11227-017-2222-4.
