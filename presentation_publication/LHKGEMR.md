@@ -4,6 +4,7 @@
 
 # Table of Contents
 
+1. Metadata
 1. Motivation and earlier work
 2. Goal and methods
 3. Electronic medical record
@@ -144,7 +145,7 @@
 
 * Maximum of five symptoms per disease
 
-![Resulting knowledge graph (own illustration according to [1, p. 4])](images/KG.png){ width=90% height=40% }
+![Resulting knowledge graph (own illustration according to [2, p. 4])](images/KG.png){ width=90% height=40% }
 
 ---
 
@@ -156,13 +157,13 @@
 
 * Assumption: GHKG is precise, but not complete
 
-* Relative comparison between models, not an absolute evaluation
+* Apt for relative comparison between models, not an absolute evaluation
 
 * Two best performing models and GHKG evaluated by physicians
 
 * Physicians tag suggested disease-symptom edges on a 4-point scale ranging from "Always happens" to "Never"
 
-* Binarization with "Never" as negative and other three as positive
+* Binarization with "Never" as negative and other three tags as positive
 
 * Precision-recall curve as evaluation measure
 
@@ -189,7 +190,7 @@
   * GHKG uses less precise language
   * Less severe edges in GHKG
 
-* Naive Bayes and logistic regression suggest symptoms casued by confounding factors
+* Naive Bayes and logistic regression suggest symptoms caused by confounding factors
 
 * Noisy OR often suggests general symptoms
 
