@@ -63,7 +63,7 @@ using the platform.
 
 ![Link Climate Query](images/LinkClimate2.png)
 
-# In Action - SPARSQL 
+# In Action - SPARQL 
 
 ![Link Climate Query](images/LinkClimate1.png)
 
