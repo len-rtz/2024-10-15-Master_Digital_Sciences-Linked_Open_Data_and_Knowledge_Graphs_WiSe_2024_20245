@@ -145,7 +145,7 @@
 
 * Maximum of five symptoms per disease
 
-![Resulting knowledge graph (own illustration according to [2, p. 4])](images/KG.png){ width=90% height=40% }
+![Resulting knowledge graph (own illustration according to [2, p. 4])](images/LHKGEMR_KG.png){ width=90% height=40% }
 
 ---
 

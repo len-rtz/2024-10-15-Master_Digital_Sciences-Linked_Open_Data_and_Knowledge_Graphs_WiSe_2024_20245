@@ -74,7 +74,7 @@
 
 **Not a tree structure!**
 
-![Hierarchy of s:VideoGame](images/hierarchy_videogame.png){ width=40% height=55% }
+![Hierarchy of s:VideoGame](images/SchemaDotOrg_hierarchy_videogame.png){ width=40% height=55% }
 
 ---
 
@@ -82,7 +82,7 @@
 
 ## 3.2 Structure of the *s:Thing*-hierarchy (cont.)
 
-![Hierarchy of s:VideoGameSeries](images/hierarchy_videogameseries.png){ width=40% height=75% }
+![Hierarchy of s:VideoGameSeries](images/SchemaDotOrg_hierarchy_videogameseries.png){ width=40% height=75% }
 
 ---
 
@@ -134,13 +134,13 @@
 
 # 4 Real-world examples
 
-![Schema.org usage in an email confirmation of a reservation](images/email_reservation.png){width=80% height=80%}
+![Schema.org usage in an email confirmation of a reservation](images/SchemaDotOrg_email_reservation.png){width=80% height=80%}
 
 ---
 
 # 4 Real-world examples
 
-![Schema.org usage in rich snippets](images/rich_snippets.png){width=95% height=80%}
+![Schema.org usage in rich snippets](images/SchemaDotOrg_rich_snippets.png){width=95% height=80%}
 
 Test for yourself: \textcolor{blue}{https://search.google.com/test/rich-results}
 
