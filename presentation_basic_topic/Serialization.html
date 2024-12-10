@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Kseniia Blokhina">
+  <title>RDF Serialization</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">RDF Serialization</h1>
+  <p class="author">Kseniia Blokhina</p>
+  <p class="date">29/10/2024</p>
+</section>
+
+<section id="rdf" class="slide level1">
+<h1>RDF</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>RDF (Resource Description Framework) allows us to specify graphs
+that are:
+<ul>
+<li>Directed (edges have a source and target)</li>
+<li>Edge-labelled (each edge has one label)</li>
+<li>A restricted form of multi-graphs (multiple edges can exist between
+the same vertices with different labels)</li>
+</ul></li>
+</ul>
+<h2 id="graphs">Graphs</h2>
+<ul>
+<li>Graphs can be represented in various concrete ways, including
+graphical diagrams.</li>
+<li>Machines require an RDF serialization to interpret graphs, which
+allows storing and transmitting triples in a file.</li>
+</ul>
+</section>
+<section id="serializing-graphs" class="slide level1">
+<h1>Serializing Graphs</h1>
+<p>Numerous syntactic formats are available for RDF serialization:</p>
+<ul>
+<li><p><strong>N-Triples</strong> - simple, line-based format</p></li>
+<li><p><strong>Turtle</strong> - adds convenient abbreviations to
+N-Triples</p></li>
+<li><p><strong>JSON-LD</strong> - encodes RDF graphs in JSON</p></li>
+<li><p><strong>XML</strong> - encodes RDF graphs in XML</p></li>
+<li><p><strong>RDFa</strong> - embeds RDF graphs into HTML</p></li>
+</ul>
+</section>
+<section id="n-triples-basics" class="slide level1">
+<h1>N-Triples Basics</h1>
+<ul>
+<li><strong>N-Triples</strong> represent each RDF triple with:
+<ul>
+<li>Subject</li>
+<li>Predicate</li>
+<li>Object</li>
+</ul></li>
+<li><strong>Syntax</strong>: Triple statements are separated by
+whitespace and terminated by a dot (‘.’) after each triple.</li>
+</ul>
+<p>Example: <img data-src="code_snippet1.png"
+alt="Code Snippet 1" /></p>
+</section>
+<section id="n-triples-iris-and-literals" class="slide level1">
+<h1>N-Triples: IRIs and Literals</h1>
+<h2 id="iris">IRIs</h2>
+<ul>
+<li>In N-Triples, IRIs (Internationalized Resource Identifiers) must be
+written as absolute IRIs.</li>
+<li>They are enclosed in <code>&lt; &gt;</code> and may contain numeric
+escape sequences.</li>
+</ul>
+<h2 id="rdf-literals">RDF Literals</h2>
+<ul>
+<li>Literals are used to identify values, such as strings, numbers, and
+dates.</li>
+<li>Syntax includes:
+<ul>
+<li>A lexical form (the actual string value).</li>
+<li>An optional language tag (preceded by @).</li>
+<li>An optional datatype IRI (preceded by ^^).</li>
+<li>Blank nodes are expressed with <em>: followed by a label (e.g.,
+</em> :alice).</li>
+</ul></li>
+</ul>
+</section>
+<section id="n-triples-example" class="slide level1">
+<h1>N-Triples: Example</h1>
+<figure>
+<img data-src="code_snippet2.png" alt="Code Snippet 2" />
+<figcaption aria-hidden="true">Code Snippet 2</figcaption>
+</figure>
+</section>
+<section id="n-triples-example-1" class="slide level1">
+<h1>N-Triples: Example</h1>
+<figure>
+<img data-src="serialization_rdf_graph.png" alt="RDF Graph 1" />
+<figcaption aria-hidden="true">RDF Graph 1</figcaption>
+</figure>
+</section>
+<section id="turtle-serialization" class="slide level1">
+<h1>Turtle Serialization</h1>
+<h2 id="features">Features</h2>
+<ul>
+<li>Prefix declarations and base namespaces allow shortening IRIs.</li>
+<li>Blank nodes can be encoded with square brackets, allowing in-line
+predicate-object pairs.</li>
+<li>Easy to parse and straightforward for humans to read.</li>
+</ul>
+<p>Unfortunately, it’s quite costly to parse compared to N-Triples.</p>
+<h2 id="syntax">Syntax</h2>
+<ul>
+<li>Numbers can be written directly without using quotes or specifying
+types, as they are automatically treated as default types like integer,
+decimal, or double.</li>
+<li>Booleans can also be written as true or false directly</li>
+</ul>
+</section>
+<section id="turtle-example" class="slide level1">
+<h1>Turtle: Example</h1>
+<ul>
+<li>If two triples share both the same subject and predicate, the two
+objects can be separated by commas</li>
+</ul>
+<figure>
+<img data-src="code_snippet6.png" alt="Code Snippet 3" />
+<figcaption aria-hidden="true">Code Snippet 3</figcaption>
+</figure>
+</section>
+<section id="turtle-example-1" class="slide level1">
+<h1>Turtle: Example</h1>
+<ul>
+<li>If several triples share the same subject, the predicates and
+objects can be listed, separated by semicolons</li>
+</ul>
+<figure>
+<img data-src="code_snippet5.png" alt="Code Snippet 4" />
+<figcaption aria-hidden="true">Code Snippet 4</figcaption>
+</figure>
+</section>
+<section id="turtle-example-2" class="slide level1">
+<h1>Turtle: Example</h1>
+<figure>
+<img data-src="serialization_rdf_graph_2.png" alt="RDF Graph 2" />
+<figcaption aria-hidden="true">RDF Graph 2</figcaption>
+</figure>
+</section>
+<section id="xml-serialization" class="slide level1">
+<h1>XML Serialization</h1>
+<p>RDF/XML is the oldest RDF serialization format, initially chosen due
+to widespread XML support.</p>
+<p><strong>Challenges</strong>: Blends XML’s tree structure with RDF’s
+graph model, making it verbose and hard to understand.</p>
+<h3 id="primary-components">Primary Components:</h3>
+<ul>
+<li><strong>Graph nodes</strong>: rdf:Description
+<ul>
+<li>rdf:about attribute can be added if the node is an IRI</li>
+</ul></li>
+<li><strong>Predicate arcs</strong> are nested within nodes:
+ex:editor</li>
+</ul>
+</section>
+<section id="multiple-property" class="slide level1">
+<h1>Multiple Property</h1>
+<h3 id="example">Example</h3>
+<figure>
+<img data-src="code_snippet3.png" alt="Code Snippet 4" />
+<figcaption aria-hidden="true">Code Snippet 4</figcaption>
+</figure>
+</section>
+<section id="to-abbreviation" class="slide level1">
+<h1>… to abbreviation</h1>
+<figure>
+<img data-src="code_snippet4.png" alt="Code Snippet 5" />
+<figcaption aria-hidden="true">Code Snippet 5</figcaption>
+</figure>
+</section>
+<section id="to-abbreviation-1" class="slide level1">
+<h1>… to abbreviation</h1>
+<figure>
+<img data-src="serialization_figure.png" alt="RDF Graph 3" />
+<figcaption aria-hidden="true">RDF Graph 3</figcaption>
+</figure>
+</section>
+<section id="more-abbreviations" class="slide level1">
+<h1>More abbreviations</h1>
+<ul>
+<li><p>When a predicate arc in an RDF graph points to an object node
+which has no further predicate arcs this form can be shortened</p></li>
+<li><p>When a property element’s content is string literal, it may be
+possible to use it as an XML attribute on the containing node
+element.</p></li>
+</ul>
+<figure>
+<img data-src="serialization_abbreviations.png" alt="Abbreviations" />
+<figcaption aria-hidden="true">Abbreviations</figcaption>
+</figure>
+</section>
+<section id="rdfa" class="slide level1">
+<h1>RDFa</h1>
+<ul>
+<li>RDFa (RDF in Attributes) - an HTML embedding of RDF triples; used
+for HTML document annotations (e.g., with schema.org)
+<ul>
+<li>By adding attributes to HTML elements, you can give semantic context
+to the content inside your webpages</li>
+</ul></li>
+<li>Mostly used by web crawlers (e.g., Google) to enhance search
+previews.</li>
+</ul>
+</section>
+<section id="how-rdfa-works" class="slide level1">
+<h1>How RDFa Works</h1>
+<p>It combines RDF with view data (HTML)</p>
+<h3 id="example-1">Example</h3>
+<figure>
+<img data-src="code_snippet7.png" alt="Code Snippet 6" />
+<figcaption aria-hidden="true">Code Snippet 6</figcaption>
+</figure>
+</section>
+<section id="usage" class="slide level1">
+<h1>Usage</h1>
+<p>Use RDFa if you want to add lightweight RDF support to existing HTML
+rather than full RDF compatibility</p>
+<ul>
+<li><strong>But</strong>: It makes HTML documents larger and harder to
+manage.</li>
+</ul>
+<p>For higher data volumes or ease of use, consider JSON-LD or
+N-Triples</p>
+</section>
+<section id="json-ld" class="slide level1">
+<h1>JSON-LD</h1>
+<h3 id="what-is-json-ld">What is JSON-LD?</h3>
+<ul>
+<li><p>JSON-LD is an extension of JSON, widely used in web
+applications.</p></li>
+<li><p>It’s fully compatible with JSON, allowing easy integration with
+existing JSON APIs. Ideal for RESTful JSON APIs where RDF parsing
+performance is not critical.</p></li>
+</ul>
+<h3 id="how-it-works">How it Works:</h3>
+<ul>
+<li>Converts JSON data into RDF by adding an <span class="citation"
+data-cites="context">@context</span> object to map keys to RDF Classes
+and Properties.</li>
+</ul>
+</section>
+<section id="example-2" class="slide level1">
+<h1>Example</h1>
+<figure>
+<img data-src="code_snippet8.png" alt="Code Snippet 7" />
+<figcaption aria-hidden="true">Code Snippet 7</figcaption>
+</figure>
+</section>
+<section id="bonus-method" class="slide level1">
+<h1>Bonus Method</h1>
+<h2 id="hdt">HDT</h2>
+<ul>
+<li>HDT is both a compact data structure and a binary serialization
+format for RDF.</li>
+<li>it’s designed to save space and bandwidth.</li>
+</ul>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Highly Efficient</li>
+<li>Built-in Indexing</li>
+<li>HDT compression is resource-intensive</li>
+</ul>
+<figure>
+<img data-src="serialization_totaltime.png" alt="Total time" />
+<figcaption aria-hidden="true">Total time</figcaption>
+</figure>
+<p>More: https://www.rdfhdt.org/what-is-hdt/</p>
+</section>
+<section id="thank-you-for-your-attention" class="slide level1">
+<h1>Thank you for your attention!</h1>
+<h3 id="sources">Sources</h3>
+<ol type="1">
+<li>https://iccl.inf.tu-dresden.de/w/images/d/d2/KG2020-Lecture-02-overlay.pdf</li>
+<li>https://heardlibrary.github.io/digital-scholarship/lod/serialization/</li>
+<li>https://www.w3.org/TR/turtle/</li>
+<li>https://ontola.io/blog/rdf-serialization-formats</li>
+<li>https://www.w3.org/TR/rdf-syntax-grammar/</li>
+<li>Martínez-Prieto, Miguel A., Mario Arias Gallego, and Javier D.
+Fernández. “Exchange and consumption of huge RDF data.” The Semantic
+Web: Research and Applications: 9th Extended Semantic Web Conference,
+ESWC 2012, Heraklion, Crete, Greece, May 27-31, 2012. Proceedings 9.
+Springer Berlin Heidelberg, 2012.</li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
