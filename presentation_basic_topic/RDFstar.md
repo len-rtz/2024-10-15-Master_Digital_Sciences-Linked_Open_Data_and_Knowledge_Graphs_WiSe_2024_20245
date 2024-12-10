@@ -12,7 +12,7 @@
   - Cannot easily express metadata about relationships
   - Leads to complexity when representing context, source, or certainty of statements
 
-  ![RDF-Triple](rdf*-rdf-triple.png)
+  ![RDF-Triple](/images/rdf*-rdf-triple.png)
 
 
 # Why Do We Need RDF*?
@@ -25,7 +25,7 @@
   - Introduces a way to add metadata directly to triples
   - Provides a more efficient, intuitive solution for metadata and contextual information
 
-  ![RDF Reification](rdf*-rdf-reification.png)
+  ![RDF Reification](images/rdf*-rdf-reification.png)
 
 
 # What is RDF*?
@@ -62,7 +62,7 @@
 - **Improved Querying**:
   - Queries for metadata become more straightforward and easier to interpret
 - **Growing Tool Support**:
-  - RDF* is e.g. supported by GraphDB and Blazegraph
+  - RDF* is e.g. supported by GraphDB and Blazegraph (other examples can be found [here]([https://www.genome.gov/](https://w3c.github.io/rdf-star/implementations.html))
  
 # Applications of RDF*
 
@@ -106,6 +106,8 @@
 3. ["What is RDF-star?" Ontotext](https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/#:~:text=RDF%2Dstar%20is%20an%20extension,SPARQL%20queries%20for%20improved%20comprehensibility)
 
 4. ["The Pros and Cons of RDF-star and SPARQL-star," Data Science Central](https://www.datasciencecentral.com/the-pros-and-cons-of-rdf-star-and-sparql-star/)
+
+5. [RDF-Star Implementations, W3C]([https://www.genome.gov/](https://w3c.github.io/rdf-star/implementations.html))
 
 
 
